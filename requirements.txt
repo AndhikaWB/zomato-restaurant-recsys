@@ -1,0 +1,19 @@
+# PyTorch related
+numpy==1.26.3
+lightning==2.4.0
+torchmetrics==1.6.0
+transformers==4.46.3
+
+# Plotly related
+plotly==5.24.1
+pandas==2.2.3
+nbformat==5.10.4
+kaleido==0.1.0post1
+
+# Polars related
+polars==1.14.0
+pyarrow==18.0.0
+
+# Others
+scikit-learn==1.5.2
+dython==0.7.8
