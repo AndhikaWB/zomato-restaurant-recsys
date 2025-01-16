@@ -1,10 +1,12 @@
 # Zomato Restaurants Clustering
 
-- Data cleaning and preprocessing pipeline
-- Simple data exploration
+Using Zomato restaurant data for the following purpose:
+- Preprocessing pipeline
+- Exploratory data analysis
 - Text embedding on list of cuisines, etc
 - Clustering based on restaurant characteristics
-- ~~Recommendation system~~ (not done)
+- Plot restaurant data to interactive map (PyDeck)
+- ~~Restaurant recommendation system~~ (PyDeck doesn't support `on_hover` handler yet)
 
 ## Setup
 
@@ -43,21 +45,29 @@
 
 </details>
 
+<details>
+  <summary>3D map</summary>
+
+  ![](img/map.png)
+
+</details>
+
 ## Todo
 
 - ~~Vocabulary builder and word to index using Polars~~
 - Implement `inverse_transform` for word to index
 - ~~Test pickling on Polars dataframe and functions~~
-- See if I can make clusters less centered around price range
-- Map exploration using PyDeck
 - Use CuML or migrate preprocessings from Scikit to PyTorch entirely
+- See if I can make clusters less centered around price range
+- ~~Map exploration using PyDeck~~
+- Restaurant recommendation on map click/hover (event handler not supported yet)
 
-## Lessons and Recommendation
+## Personal Notes
 
 - Don't set pipeline result back as the original variable. This will make evalution much harder since the original (untransformed) data is not available anymore
 - Clustering doesn't guarantee better categorization. Sometimes the results are hard to interpret from human perspective, or the cluster quality is bad no matter how much you tweak it (even with the help of embedding)
   - The data structure must be made with data-driven approach in mind, not as an afterthought, so that human-like labeling (like RFM) can still be done in case of bad cluster result. Example:
     - There should be a primary/dominant cuisine theme even if the restaurant owner can add more cuisines as a list. If a restaurant doesn't have specific cuisine culture (e.g. ice cream), a "General" value can be selected
     - Highlights can be unnested as separate boolean column instead (e.g. debit, credit, reservation, takeaway). This can be done as part of preprocessing but probably less accurate since the list can be anything
-  - Since the cluster result is bad (only centered around price range), user based recommendation system may be better in this case, rather than content based. Though I haven't tested further to back my claim
+  - Since the cluster result is bad (only centered around price range), user based recommendation system may be better in this case, rather than content based. However, the user data isn't available to further test my claim
 
