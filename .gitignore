@@ -1,2 +1,6 @@
 **/__pycache__
 /.env
+/data/*.csv
+/.qdrant*
+/qdrant/*
+!/qdrant/local.yaml

@@ -11,10 +11,13 @@ nbformat==5.10.4
 kaleido==0.1.0post1
 
 # Polars related
-polars==1.14.0
+polars==1.20.0
 pyarrow==18.0.0
 
 # Others
 scikit-learn==1.5.2
 dython==0.7.8
+
+# Map and rec sys
 pydeck==0.9.1
+qdrant-client==1.13.0

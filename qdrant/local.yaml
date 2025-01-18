@@ -1,0 +1,5 @@
+storage:
+  storage_path: ./qdrant/storage
+  snapshots_path: ./qdrant/snapshots
+
+telemetry_disabled: false
