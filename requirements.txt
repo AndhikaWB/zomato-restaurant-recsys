@@ -18,6 +18,8 @@ pyarrow==18.0.0
 scikit-learn==1.5.2
 dython==0.7.8
 
-# Map and rec sys
+# Map and recsys
 pydeck==0.9.1
 qdrant-client==1.13.0
+streamlit==1.41.1
+python-dotenv==1.0.1
